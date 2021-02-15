@@ -24,18 +24,18 @@ namespace Machine_Cafe.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(decimal badge)
+        public JsonResult Get(decimal badge)
         {
 
             var result = _machineService.GetUser(badge);
 
             if(result != null)
             {
-                return Ok(result);
+                return new JsonResult(result);
             }
             else
             {
-                return NotFound();
+                return new JsonResult(null);
             }
         }
 

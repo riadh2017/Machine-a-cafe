@@ -22,14 +22,14 @@ namespace Machine_Cafe.Controllers
         }
 
         [HttpGet]
-        public Choix_utilisateurs Get(decimal badge)
+        public JsonResult Get(decimal badge)
         {
 
             var result = _machineService.GetUserChoice(badge);
 
             if (result != null)
             {
-                return result;
+                return  new JsonResult(result);
             }
             else
             {

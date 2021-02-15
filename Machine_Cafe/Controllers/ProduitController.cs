@@ -23,11 +23,11 @@ namespace Machine_Cafe.Controllers
         }
 
         [HttpGet]
-        public List<Produits> Get()
+        public JsonResult Get()
         {
 
             var result = _machineService.GetProduits();
-            return result;
+            return new JsonResult(result);
         }
     }
 }
